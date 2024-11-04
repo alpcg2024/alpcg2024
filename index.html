@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ALPCG Project Showcase</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1e2a38;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #14212b;
+            flex-wrap: wrap;
+        }
+        .logo {
+            width: 150px;
+            height: auto;
+        }
+        h1 {
+            margin: 20px 0;
+            flex-grow: 1;
+        }
+        .container {
+            perspective: 1000px;
+            display: inline-block;
+            margin: 20px;
+            width: 90%; /* Full width on small screens */
+            max-width: 300px; /* Limit width on larger screens */
+            position: relative;
+        }
+        .card {
+            width: 100%;
+            height: 0;
+            padding-bottom: 80%; /* Maintain aspect ratio */
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        .container:hover .card {
+            transform: rotateY(180deg);
+        }
+        .card .front, .card .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        .card .front {
+            background-color: #27496d;
+            color: #ffffff;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.9;
+        }
+        .card .back {
+            background-color: #1e3a56;
+            color: #d1e8ff;
+            transform: rotateY(180deg);
+        }
+        .card h2 {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .card p {
+            margin: 0;
+            padding: 0;
+        }
+        footer {
+            background-color: #14212b;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+            .logo {
+                margin-bottom: 10px;
+                width: 120px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                max-width: 100%; 
+                margin: 10px;
+            }
+            .logo {
+                width: 100px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://i.postimg.cc/Vk1QMLgM/Logo-Computer-Club.png" alt="Logo" class="logo">
+        <h1> ALPCG Member’s Projects</h1>
+    </header>
+
+    <!-- 12 project containers -->
+    <div class="container" onclick="openProject(this)" data-url="https://example.com/project1">
+        <div class="card">
+            <div class="front" style="background-image: url('project1-background.jpg');">
+                <h2>Project 1</h2>
+            </div>
+            <div class="back">
+                <p>Detailed description of Project 1.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" onclick="openProject(this)" data-url="https://example.com/project2">
+        <div class="card">
+            <div class="front" style="background-image: url('project2-background.jpg');">
+                <h2>Project 2</h2>
+            </div>
+            <div class="back">
+                <p>Detailed description of Project 2.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" onclick="openProject(this)" data-url="https://example.com/project3">
+        <div class="card">
+            <div class="front" style="background-image: url('project3-background.jpg');">
+                <h2>Project 3</h2>
+            </div>
+            <div class="back">
+                <p>Detailed description of Project 3.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" onclick="openProject(this)" data-url="https://example.com/project4">
+        <div class="card">
+            <div class="front" style="background-image: url('project4-background.jpg');">
+                <h2>Project 4</h2>
+            </div>
+            <div class="back">
+                <p>Detailed description of Project 4.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" onclick="openProject(this)" data-url="https://example.com/project5">
+        <div class="card">
+            <div class="front" style="background-image: url('project5-background.jpg');">
+                <h2>Project 5</h2>
+            </div>
+            <div class="back">
+                <p>Detailed description of Project 5.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" onclick="openProject(this)" data-url="https://example.com/project6">
+        <div class="card">
+            <div class="front" style="background-image: url('project6-background.jpg');">
+                <h2>Project 6</h2>
+            </div>
+            <div class="back">
+                <p>Detailed description of Project 6.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" onclick="openProject(this)" data-url="https://example.com/project7">
+        <div class="card">
+            <div class="front" style="background-image: url('project7-background.jpg');">
+                <h2>Project 7</h2>
+            </div>
+            <div class="back">
+                <p>Detailed description of Project 7.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" onclick="openProject(this)" data-url="https://example.com/project8">
+        <div class="card">
+            <div class="front" style="background-image: url('project8-background.jpg');">
+                <h2>Project 8</h2>
+            </div>
+            <div class="back">
+                <p>Detailed description of Project 8.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" onclick="openProject(this)" data-url="https://example.com/project9">
+        <div class="card">
+            <div class="front" style="background-image: url('project9-background.jpg');">
+                <h2>Project 9</h2>
+            </div>
+            <div class="back">
+                <p>Detailed description of Project 9.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" onclick="openProject(this)" data-url="https://example.com/project10">
+        <div class="card">
+            <div class="front" style="background-image: url('project10-background.jpg');">
+                <h2>Project 10</h2>
+            </div>
+            <div class="back">
+                <p>Detailed description of Project 10.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" onclick="openProject(this)" data-url="https://example.com/project11">
+        <div class="card">
+            <div class="front" style="background-image: url('project11-background.jpg');">
+                <h2>Project 11</h2>
+            </div>
+            <div class="back">
+                <p>Detailed description of Project 11.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" onclick="openProject(this)" data-url="https://example.com/project12">
+        <div class="card">
+            <div class="front" style="background-image: url('project12-background.jpg');">
+                <h2>Project 12</h2>
+            </div>
+            <div class="back">
+                <p>Detailed description of Project 12.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 ALPCG By ART. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openProject(container) {
+            window.open(container.getAttribute('data-url'), '_blank');
+        }
+    </script>
+</body>
+</html>
